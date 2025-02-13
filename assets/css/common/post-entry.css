@@ -20,8 +20,7 @@
 }
 
 .first-entry .entry-content {
-    margin: 14px 0;
-    font-size: 16px;
+    font-size: 15px;
     -webkit-line-clamp: 3;
 }
 
@@ -57,7 +56,8 @@
 }
 
 .entry-content {
-    margin: 8px 0;
+    margin: 10px 0;
+    padding: 10px 15px;
     color: var(--secondary);
     font-size: 14px;
     line-height: 1.6;
@@ -65,7 +65,20 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    font-style: italic;
+    border-left: 3px solid var(--secondary);
+    border-radius: 2px;
 }
+
+/* .entry-content::before {
+    content: "❝";
+    font-size: 10px;
+}
+
+.entry-content::after {
+    content: "❞";
+    font-size: 10px;
+} */
 
 .entry-footer {
     color: var(--secondary);

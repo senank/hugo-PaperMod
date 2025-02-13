@@ -27,11 +27,7 @@
     {{ .Description | markdownify }}
   </div>
   {{- end }}
-  {{- if .Params.doi }}
-  <div>
-    <p><strong>📖 DOI:</strong> <a href="{{ .Params.doi }}" target="_blank">{{ .Params.doi }}</a></p>
-  </div>
-  {{- end }}
+
 </header>
 {{- end }}
 
@@ -87,16 +83,15 @@
   {{- if (ne (.Param "hideSummary") true) }}
   <div class="entry-content">
     <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
-
-    {{- with .Params.doi }}
-    <p class="doi-link"><a href="{{ . }}" target="_blank">{{ . }}</a></p>
-    {{- end }}
-
   </div>
   {{- end }}
   {{- if not (.Param "hideMeta") }}
   <footer class="entry-footer">
     {{- partial "post_meta.html" . -}}
+    {{- with .Params.doi }}
+    | 
+    <span class="doi-link"><a href="{{ . }}" target="_blank">{{ . }}</a></span>
+    {{- end }}
   </footer>
   {{- end }}
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
