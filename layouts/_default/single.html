@@ -19,12 +19,21 @@
       {{ .Description }}
     </div>
     {{- end }}
+
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
-      {{- partial "post_canonical.html" . -}}
+      {{- partial "post_canonical.html" . -}} <hr>
+      {{- with .Params.doi }}
+      <p>📖 <strong>DOI:</strong> <a href="{{ . }}" target="_blank">{{ . }}</a></p><hr>
+      
+      {{- end }}
+
+      {{- with .Params.pdf }}
+      <p>📂 <strong>PDF:</strong> <a href="{{ . }}" target="_blank">Download Paper</a></p>
+      {{- end }}
     </div>
     {{- end }}
   </header>
