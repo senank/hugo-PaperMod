@@ -67,7 +67,7 @@
     -webkit-line-clamp: 2;
     font-style: italic;
     border-left: 3px solid var(--secondary);
-    border-radius: 2px;
+    border-radius: 2.5px;
 }
 
 /* .entry-content::before {
