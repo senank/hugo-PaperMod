@@ -63,7 +63,7 @@
 {{- $class = "first-entry" }}
 {{- else if $term }}
 {{- $class = "post-entry tag-entry" }}
-{{- else if eq $index 1}}
+{{- else if (and $.IsHome (eq $index 1))}}
 <h3><em>Other Article Reviews</em>:</h3>
 <div style="margin: 24px;"></div>
 
