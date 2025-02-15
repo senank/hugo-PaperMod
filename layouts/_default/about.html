@@ -2,15 +2,18 @@
 
 <h1 style="margin: 16px" class="post-title entry-hint-parent">{{ .Title }}</h1>
   {{- if .Content }}
-  <div style="display: flex; align-items: start; justify-content: space-between; max-width: 900px; margin: auto; gap: 20px;">
+  <div style="max-width: 900px; margin: auto; overflow: hidden; position: relative;">
+    <img src="https://avatars.githubusercontent.com/u/55685783?v=4" 
+         style="border-radius: 50%; width: 200px; height: auto; float: right; margin-left: 15px; shape-outside: circle(); padding: 10px;"
+         alt="Senan Adonis Kassem">
+
     <div class="post-content">
       {{- if not (.Param "disableAnchoredHeadings") }}
-      {{- partial "anchored_headings.html" .Content -}}
-      {{- else }}{{ .Content }}{{ end }}
+        {{- partial "anchored_headings.html" .Content -}}
+      {{- else }}
+        {{ .Content }}
+      {{- end }}
     </div>
-    <div style="width: 100%; height: auto;">
-      <img src="https://avatars.githubusercontent.com/u/55685783?v=4" style="border-radius: 50%;" alt="Senan Adonis Kassem">
-    </div>
-  </div>
+</div>
   {{- end }}
 {{- end }}{{/* end main */}}
